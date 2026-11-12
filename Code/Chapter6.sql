@@ -1,1 +1,12 @@
-
+/*
+Query 1: WHERE subquery returning one value
+Write a query that uses a subquery in the WHERE clause to count the number of payments that are greater than the
+average.
+*/
+SELECT COUNT(*) AS payment_above_avg
+FROM payment
+WHERE amount > 
+	(
+    SELECT AVG(amount)
+        FROM payment
+	)
